@@ -1,12 +1,22 @@
 /* === Global Styles === */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #f8fbe9;
-  color: #4c4c4c;
+  background-color: #f8fbe9; /* Fondo de color suave */
+  color: #4c4c4c; /* Color de texto oscuro */
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces */
+  line-height: 1.6; /* Mejora la legibilidad con un poco más de espacio entre líneas */
 }
+
+html {
+  scroll-behavior: smooth; /* Asegura el desplazamiento suave para todo el documento */
+}
+
+* {
+  box-sizing: border-box; /* Asegura que el padding y el borde no afecten al tamaño total de los elementos */
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
