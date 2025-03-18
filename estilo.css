@@ -25,11 +25,14 @@ p {
   padding: 12px 25px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease;
+  z-index: 1050; /* Asegura que la barra de navegación esté por encima de otros elementos */
 }
 
 .navbar-toggler-icon {
   background-color: #a7c520 !important;
 }
+
+/* Cambiar el fondo cuando el navbar tiene la clase 'scrolled' */
 .navbar.scrolled {
   background-color: #a7c520;
 }
@@ -42,6 +45,73 @@ p {
 
 .nav-link:hover {
   color: #ff7f50 !important;
+}
+
+/* Asegurarse de que el menú colapsado no se desborde */
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.nav-item {
+  padding: 0 10px;
+}
+
+.navbar-toggler {
+  border: none; /* Eliminar borde del botón de toggler */
+}
+
+/* === Responsive Styles === */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    margin-left: auto; /* Asegura que el icono del menú esté alineado correctamente */
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f8fbe9;
+    z-index: 1050;
+    padding-top: 60px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item .nav-link {
+    color: #a7c520 !important;
+    font-weight: 600;
+  }
+
+  .nav-item .nav-link:hover {
+    color: #ff7f50 !important;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #a7c520 !important;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
 }
 
 /* === Hero Section === */
