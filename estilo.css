@@ -20,6 +20,7 @@ p {
 }
 
 /* === Navbar === */
+/* === Navbar === */
 .navbar {
   background-color: #f8fbe9;
   padding: 12px 25px;
@@ -30,6 +31,7 @@ p {
 .navbar-toggler-icon {
   background-color: #a7c520 !important;
 }
+
 .navbar.scrolled {
   background-color: #a7c520;
 }
@@ -43,10 +45,11 @@ p {
 .nav-link:hover {
   color: #b6c5a1 !important;
 }
+
 /* Ajuste de tamaño de íconos en pantallas pequeñas */
 @media (max-width: 767px) {
   .nav-link i {
-    font-size: 1.2rem;  /* Puedes ajustarlo según lo que necesites */
+    font-size: 1.2rem;  /* Ajuste de tamaño de iconos en móviles */
   }
 }
 
@@ -58,7 +61,8 @@ p {
 }
 
 .carousel-inner img {
-  height: 100vh;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   filter: brightness(0.5);
 }
@@ -72,6 +76,11 @@ p {
   color: #fff;
   z-index: 10;
   max-width: 90%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay-text h1 {
@@ -100,6 +109,35 @@ p {
   background-color: #ff7f50;
   transform: scale(1.05);
 }
+
+/* === Ajustes para pantallas pequeñas === */
+@media (max-width: 767px) {
+  /* Hero Section */
+  .hero {
+    height: 70vh;  /* Ajustar altura para pantallas más pequeñas */
+  }
+
+  .overlay-text h1 {
+    font-size: 2.5rem;  /* Reducir tamaño del título en móviles */
+  }
+
+  .overlay-text p {
+    font-size: 1rem;  /* Reducir tamaño del párrafo */
+  }
+
+  .overlay-text .btn {
+    padding: 12px 28px;  /* Reducir tamaño de los botones */
+    margin: 10px 5px;  /* Reducir el margen entre botones */
+    font-size: 1rem;  /* Ajustar tamaño de fuente en botones */
+    width: 100%;  /* Hacer los botones más anchos para que se alineen */
+  }
+
+  /* Asegurarse de que las imágenes del carousel no sean tan grandes */
+  .carousel-inner img {
+    height: 60vh;  /* Ajustar altura de las imágenes */
+  }
+}
+
 
 /* === Beneficios Section === */
 .beneficios {
@@ -538,4 +576,24 @@ footer .container {
   #dynamic-text {
     font-size: 1.5rem;  /* Ajuste para pantallas pequeñas */
   }
+}
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366; /* Color verde de WhatsApp */
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#whatsapp-button img {
+  width: 50px;
+  height: 50px;
+}
+
+#whatsapp-button:hover {
+  background-color: #128C7E; /* Color verde más oscuro en hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
