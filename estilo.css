@@ -41,7 +41,13 @@ p {
 }
 
 .nav-link:hover {
-  color: #ff7f50 !important;
+  color: #b6c5a1 !important;
+}
+/* Ajuste de tamaño de íconos en pantallas pequeñas */
+@media (max-width: 767px) {
+  .nav-link i {
+    font-size: 1.2rem;  /* Puedes ajustarlo según lo que necesites */
+  }
 }
 
 /* === Hero Section === */
@@ -504,5 +510,32 @@ footer .container {
   footer .social-icon {
     font-size: 1rem;
     margin: 0 8px;
+  }
+}
+/* Tamaño del texto en pantallas grandes */
+#dynamic-text {
+  font-size: 4rem;  /* Tamaño grande para pantallas de escritorio */
+  font-weight: 600;
+  transition: font-size 0.3s ease;
+}
+
+/* Tamaño del texto para pantallas más pequeñas */
+@media (max-width: 1024px) {
+  #dynamic-text {
+    font-size: 2.5rem;  /* Ajuste para tablets */
+  }
+}
+
+/* Tamaño del texto en pantallas pequeñas (celulares) */
+@media (max-width: 767px) {
+  #dynamic-text {
+    font-size: 1.8rem;  /* Ajuste para móviles */
+  }
+}
+
+/* Tamaño aún más pequeño si se quiere en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  #dynamic-text {
+    font-size: 1.5rem;  /* Ajuste para pantallas pequeñas */
   }
 }
