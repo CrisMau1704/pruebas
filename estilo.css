@@ -20,7 +20,7 @@ p {
 }
 
 /* === Navbar === */
-/* Navbar */
+/* === Navbar === */
 .navbar {
   background-color: #f8fbe9;
   padding: 12px 25px;
@@ -70,48 +70,49 @@ p {
 /* === Responsive Styles === */
 @media (max-width: 992px) {
   .navbar-toggler {
-    margin-left: auto; /* Asegura que el icono del menú esté alineado correctamente */
+    margin-left: auto; /* Asegura que el toggler esté alineado a la derecha */
+    border: none; /* Elimina el borde por defecto */
+    padding: 0.5rem; /* Añade un poco de padding */
+    position: absolute;
+    right: 1rem; /* Coloca el toggler a la derecha */
+    top: 1rem; /* Ajusta la posición vertical */
+  }
+
+  .navbar-toggler-icon {
+    background-color: #a7c520 !important; /* Color del ícono */
+    width: 1.5em; /* Tamaño del ícono */
+    height: 1.5em;
   }
 
   .navbar-collapse {
-    width: 100%;
     position: absolute;
-    top: 0;
+    top: 100%; /* Coloca el menú debajo del navbar */
     left: 0;
-    background-color: #f8fbe9;
-    z-index: 1050;
-    padding-top: 60px;
+    right: 0;
+    background-color: #f8fbe9; /* Fondo del menú desplegable */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 1rem; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el menú */
   }
 
   .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+    flex-direction: column; /* Apila los elementos del menú verticalmente */
+    align-items: center; /* Centra los elementos */
   }
 
   .nav-item {
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
+    padding: 0.5rem 0; /* Espaciado entre elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto */
   }
 
   .nav-item .nav-link {
-    color: #a7c520 !important;
+    color: #a7c520 !important; /* Color de los enlaces */
     font-weight: 600;
   }
 
   .nav-item .nav-link:hover {
-    color: #ff7f50 !important;
-  }
-
-  .navbar-toggler-icon {
-    background-color: #a7c520 !important;
-    display: block;
-    position: absolute;
-    right: 15px;
-    top: 10px;
+    color: #ff7f50 !important; /* Color al pasar el ratón */
   }
 }
 
@@ -162,7 +163,7 @@ p {
 }
 
 .overlay-text .btn:hover {
-  background-color: #ff7f50;
+  background-color: #c7270b;
   transform: scale(1.05);
 }
 
@@ -212,7 +213,7 @@ p {
 }
 
 .beneficio-box .btn:hover {
-  background-color: #ff856f;
+  background-color: #c7270b;
   transform: scale(1.05);
 }
 
@@ -273,7 +274,7 @@ p {
 }
 
 .service-box .btn:hover {
-  background-color: #ff856f;
+  background-color: #c7270b;
   transform: scale(1.05);
 }
 
