@@ -1,7 +1,7 @@
 /* === Global Styles === */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #f8fbe9;
+  background-color: #e9f6d6;
   color: #4c4c4c;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  color: #a7c520;
+  color: #e9f6d6;
   font-weight: 700;
 }
 
@@ -21,98 +21,77 @@ p {
 
 /* === Navbar === */
 .navbar {
-  background-color: #f8fbe9;
-  padding: 12px 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease;
-  z-index: 1050; /* Asegura que la barra de navegación esté por encima de otros elementos */
-}
-
-.navbar-toggler-icon {
-  background-color: #a7c520 !important;
-}
-
-/* Cambiar el fondo cuando el navbar tiene la clase 'scrolled' */
-.navbar.scrolled {
-  background-color: #a7c520;
-}
-
-.nav-link {
-  color: #a7c520 !important;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #ff7f50 !important;
-}
-
-/* Asegurarse de que el menú colapsado no se desborde */
-.navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.nav-item {
-  padding: 0 10px;
-}
-
-.navbar-toggler {
-  border: none; /* Eliminar borde del botón de toggler */
-}
-
-/* === Responsive Styles === */
-@media (max-width: 992px) {
-  .navbar-toggler {
-    margin-left: auto; /* Asegura que el icono del menú esté alineado correctamente */
-  }
-
-  .navbar-collapse {
+    background-color: #202733; /* Color inicial */
+    padding: 12px 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: fixed;
     width: 100%;
-    position: absolute;
     top: 0;
     left: 0;
-    background-color: #f8fbe9;
-    z-index: 1050;
-    padding-top: 60px;
+    z-index: 1000;
+    backdrop-filter: blur(0px); /* No blur inicialmente */
   }
-
-  .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+  
+  /* Cuando el usuario hace scroll */
+  .navbar.scrolled {
+    background-color: rgba(32, 39, 51, 0.8); /* Fondo semi-transparente */
+    backdrop-filter: blur(5px); /* Aplicar un desenfoque al fondo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer scroll */
   }
+  
 
-  .nav-item {
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
+  
+  .navbar-nav .nav-item {
+    margin-left: 10px; /* Espaciado entre los elementos de la lista */
   }
-
-  .nav-item .nav-link {
-    color: #a7c520 !important;
+  
+  /* Estilo de los enlaces como botones */
+  .nav-link {
+    color: #e9f6d6 !important;
     font-weight: 600;
+    padding: 10px 20px; /* Espaciado dentro del "botón" */
+    background-color: #202733; /* Fondo del enlace */
+    border-radius: 25px; /* Bordes redondeados */
+    text-align: center; /* Alineación de texto */
+    display: inline-block; /* Hacerlo como un "bloque" */
+    transition: all 0.3s ease;
   }
-
-  .nav-item .nav-link:hover {
+  
+  .nav-link:hover {
+    color: #17242b !important;
+    background-color: #e9f6d6; /* Fondo cuando se pasa el mouse */
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+    cursor: pointer;
+  }
+  
+  /* Estilo del enlace de Iniciar sesión */
+  .navbar-nav .nav-item .btn {
+    color: #202733;
+    background-color: #e9f6d6;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item .btn:hover {
+    background-color: #ff7f50; /* Fondo cuando se pasa el mouse */
+    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+    cursor: pointer;
+  }
+  
+  .navbar-brand {
+    color: #e9f6d6 !important;
+    font-weight: 700;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
     color: #ff7f50 !important;
   }
-
-  .navbar-toggler-icon {
-    background-color: #a7c520 !important;
-    display: block;
-    position: absolute;
-    right: 15px;
-    top: 10px;
-  }
-}
+  
 
 /* === Hero Section === */
 .hero {
@@ -142,6 +121,7 @@ p {
   font-size: 4rem;
   font-weight: 800;
   text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+  margin: 0;
 }
 
 .overlay-text p {
@@ -150,8 +130,8 @@ p {
 }
 
 .overlay-text .btn {
-  background-color: #a7c520;
-  color: #fff;
+  background-color: #e9f6d6;
+  color: #202733;
   padding: 14px 36px;
   border-radius: 50px;
   margin: 20px 10px;
@@ -165,114 +145,234 @@ p {
   transform: scale(1.05);
 }
 
+/* === Responsividad para pantallas pequeñas === */
+@media (max-width: 767px) {
+  /* Reducir tamaño de fuente para pantallas pequeñas */
+  .overlay-text h1 {
+    font-size: 2.5rem; /* Reducir el tamaño del título */
+    line-height: 1.2;  /* Ajustar el espaciado de las líneas */
+  }
+
+  .overlay-text p {
+    font-size: 1rem; /* Reducir el tamaño del párrafo */
+    line-height: 1.4;
+    margin-top: 15px;
+  }
+
+  .overlay-text .btn {
+    padding: 12px 30px; /* Reducir el tamaño del botón */
+    font-size: 1.1rem; /* Ajustar el tamaño de la fuente del botón */
+  }
+
+  /* Asegurarse de que el texto no se desborde */
+  .overlay-text {
+    max-width: 80%;
+  }
+}
+
+/* === Asegurar que el Hero Section se vea bien en pantallas más grandes === */
+@media (min-width: 1200px) {
+  .overlay-text h1 {
+    font-size: 5rem; /* Ajustar el tamaño para pantallas grandes */
+  }
+
+  .overlay-text p {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
 /* === Beneficios Section === */
+
 .beneficios {
   padding: 80px 0;
-  background-color: #a7c520;  /* Fondo gris claro para un aspecto limpio */
+  background-color: #e9f6d6; /* Suave tono verde claro */
+  position: relative; /* Esto es clave */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para darle profundidad */
+  border-radius: 10px;
+  overflow: hidden; /* Para evitar que los bordes se vean irregulares */
+}
+
+.beneficios h2 {
+  color: #202733;
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center; /* Centrar el título */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Agregar un toque moderno con mayúsculas */
+  letter-spacing: 2px; /* Un toque de espaciado */
+}
+
+.beneficios p.lead {
+  color: #202733;
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center; /* Centrar el texto */
+  line-height: 1.6;
 }
 
 .beneficio-box {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(134, 87, 87, 0.1); /* Sombra suave */
-  transition: all 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Sombra más elegante */
+  padding: 40px 25px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  text-align: center;
+  position: relative; /* Necesario para el icono de los beneficios */
+  overflow: hidden;
 }
 
 .beneficio-box:hover {
-  transform: translateY(-8px);  /* Efecto al pasar el mouse */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);  /* Más sombra en hover */
-}
-
-.beneficio-box i {
-  color: #a7c520;
+  transform: translateY(-15px); /* Mayor desplazamiento al pasar el mouse */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra más intensa en hover */
 }
 
 .beneficio-box h3 {
-  color: #a7c520;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  color: #202733;
   margin-top: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize; /* Capitalizar solo la primera letra de cada palabra */
 }
 
 .beneficio-box p {
-  color: #666;
   font-size: 1rem;
+  color: #4a4a4a;
+  margin-top: 10px;
+  line-height: 1.6;
 }
 
-.beneficio-box .btn {
-  background-color: #a7c520;
-  color: white;
-  padding: 12px 28px;
-  font-size: 1rem;
-  border-radius: 30px;
-  margin-top: 15px;
-  transition: 0.3s;
-  border: none;
+.icono-beneficio {
+  font-size: 3rem;
+  color: #17242b;
+  margin-bottom: 15px; /* Separar un poco el icono del texto */
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.beneficio-box .btn:hover {
-  background-color: #ff856f;
-  transform: scale(1.05);
+.beneficio-box:hover .icono-beneficio {
+  color: #ff856f; /* Color cuando el beneficio está en hover */
+  transform: scale(1.1); /* Aumentar el tamaño del icono al pasar el mouse */
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 767px) {
+  .beneficios {
+      padding: 60px 0; /* Reducir el padding en dispositivos pequeños */
+  }
+
   .beneficio-box {
-    margin-bottom: 20px; /* Añadir espacio entre los beneficios en dispositivos pequeños */
+      margin-bottom: 30px;
+      padding: 25px 20px; /* Ajustar el padding de las cajas */
+  }
+
+  .beneficios h2 {
+      font-size: 2rem; /* Reducir el tamaño del título en móviles */
+  }
+
+  .beneficios p.lead {
+      font-size: 1rem; /* Reducir el tamaño del párrafo en móviles */
   }
 }
 
-/* === Services Section === */
+  /* === Services Section === */
 .services {
   padding: 80px 0;
-  background-color: #f8fbe9;  /* Fondo suave para la sección */
+  background-color: #202733;  /* Fondo suave para la sección */
+  position: relative; /* Añadido para la alineación y efectos */
+  overflow: hidden; /* Evitar que elementos se desborden */
+  border-radius: 15px;
 }
 
 .service-box {
   background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.4s;
+  padding: 35px;
+  border-radius: 15px;  /* Bordes más suaves */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: 0.4s ease-in-out; /* Transición más suave */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px; /* Espaciado entre los boxes */
+  position: relative; /* Posicionamiento para la animación */
 }
 
 .service-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Efecto hover con sombra más intensa */
 }
 
 .service-box img {
-  max-width: 45%;  /* Limita el tamaño de las imágenes */
+  max-width: 50%;  /* Limita el tamaño de las imágenes */
   border-radius: 10px;
+  transition: transform 0.3s ease-in-out;  /* Animación para la imagen */
+}
+
+.service-box:hover img {
+  transform: scale(1.05); /* Efecto de zoom suave al pasar el mouse */
 }
 
 .service-text {
-  text-align: left; /* Alinea el texto */
+  flex: 1;
+  text-align: left; /* Alineación de texto */
 }
 
 .service-title {
-  color: #a7c520;
-  font-size: 1.8rem;
+  color: #202733;
+  font-size: 2rem;
   margin-top: 20px;
+  font-weight: 600;
+  text-transform: uppercase; /* Título en mayúsculas */
 }
 
 .service-box p {
   color: #666;
+  line-height: 1.6;
+  margin-top: 10px;
 }
 
 .service-box .btn {
-  background-color: #a7c520;
+  background-color: #202733;
   color: white;
   padding: 12px 28px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-radius: 30px;
-  margin-top: 15px;
-  transition: 0.3s;
+  margin-top: 20px;
+  transition: 0.3s ease;
   border: none;
 }
 
 .service-box .btn:hover {
   background-color: #ff856f;
-  transform: scale(1.05);
+  transform: scale(1.1); /* Aumentar el tamaño del botón en hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave en hover */
+}
+
+/* === Animaciones de desplazamiento === */
+.service-box[data-aos="fade-left"] .service-text {
+  transform: translateX(-30px);
+}
+
+.service-box[data-aos="fade-left"] img {
+  transform: translateX(30px);
+}
+
+.service-box[data-aos="fade-right"] .service-text {
+  transform: translateX(30px);
+}
+
+.service-box[data-aos="fade-right"] img {
+  transform: translateX(-30px);
+}
+
+[data-aos="fade-left"].aos-animate .service-text,
+[data-aos="fade-left"].aos-animate img,
+[data-aos="fade-right"].aos-animate .service-text,
+[data-aos="fade-right"].aos-animate img {
+  transform: translateX(0);
 }
 
 /* === Flexbox para alternar imagen y texto === */
@@ -293,73 +393,47 @@ p {
 .d-flex.flex-row-reverse img {
   margin-left: 20px;
 }
-/* Asegúrate de que la imagen y el texto tengan un margen apropiado */
-.service-box img {
-  transition: transform 0.5s ease-in-out;
-}
 
-.service-text {
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Estilos para el efecto de animación */
-.service-box[data-aos="fade-left"] .service-text {
-  transform: translateX(-30px);
-}
-
-.service-box[data-aos="fade-left"] img {
-  transform: translateX(30px);
-}
-
-.service-box[data-aos="fade-right"] .service-text {
-  transform: translateX(30px);
-}
-
-.service-box[data-aos="fade-right"] img {
-  transform: translateX(-30px);
-}
-
-[data-aos="fade-left"].aos-animate .service-text {
-  transform: translateX(0);
-}
-
-[data-aos="fade-left"].aos-animate img {
-  transform: translateX(0);
-}
-
-[data-aos="fade-right"].aos-animate .service-text {
-  transform: translateX(0);
-}
-
-[data-aos="fade-right"].aos-animate img {
-  transform: translateX(0);
-}
-
-
+/* Responsive para pantallas pequeñas */
 @media (max-width: 767px) {
-  /* Para pantallas pequeñas, las imágenes y el texto se apilan verticalmente */
+  .services {
+    padding: 60px 0; /* Reducir padding en pantallas pequeñas */
+  }
+
   .service-box {
-    flex-direction: column;
+    flex-direction: column; /* Asegura que la imagen y el texto se apilen */
+    padding: 25px 20px; /* Ajuste de padding */
   }
 
   .service-box img {
-    max-width: 80%; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
-    margin-bottom: 20px;
+    max-width: 80%; /* Ajustar tamaño de la imagen en pantallas pequeñas */
+    margin-bottom: 20px; /* Separación entre imagen y texto */
   }
 
   .service-text {
-    text-align: center; /* Centra el texto en pantallas pequeñas */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .service-title {
+    font-size: 1.8rem; /* Ajustar el tamaño de la fuente en dispositivos pequeños */
+  }
+
+  .service-box .btn {
+    width: 100%; /* El botón ocupa todo el ancho en pantallas pequeñas */
   }
 }
+
+
 
 /* === Digitalization Process Section === */
 #digitalization-process {
   padding: 80px 0;
-  background-color: #a7c520; /* Fondo gris claro, sin imagen de fondo */
+  color: #202733;
+  background-color: #e9f6d6;  /* Fondo gris claro, sin imagen de fondo */
 }
 
 .benefit-box {
-  background-color: #f8fbe9; /* Fondo blanco para las cajas */
+  background-color: #fff; /* Fondo blanco para las cajas */
   border-radius: 10px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   transition: all 0.3s ease;
@@ -367,11 +441,11 @@ p {
 
 .benefit-box:hover {
   transform: translateY(-8px); /* Efecto de elevación */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Más sombra en hover */
+  
 }
 
 .benefit-box i {
-  color: #215080; /* Color general para los iconos */
+  color: #202733; /* Color general para los iconos */
 }
 
 .benefit-box h5 {
@@ -381,12 +455,12 @@ p {
 }
 
 .benefit-box p {
-  color: #666; /* Texto con color gris suave */
+  color: #202733; /* Texto con color gris suave */
   font-size: 1rem;
 }
 
 .benefit-box .btn {
-  background-color: #215080;
+  background-color: #202733;
   color: white;
   padding: 12px 28px;
   font-size: 1rem;
@@ -444,9 +518,9 @@ p {
 /* === Contact Section === */
 /* === Contact Section === */
 .contact {
-  background-color: #f8fbe9; /* Color de fondo claro */
+  background-color: #202733; /* Color de fondo claro */
   padding: 80px 0;
-  color: #333; /* Cambié el color de texto a un tono más oscuro para mejor legibilidad */
+  color: #202733; /* Cambié el color de texto a un tono más oscuro para mejor legibilidad */
   position: relative;
 }
 
@@ -459,7 +533,7 @@ p {
 
 .contact p {
   font-size: 1.2rem;
-  color: #a7c520;
+  color: #17242b;
   font-weight: 500;
 }
 
@@ -475,7 +549,7 @@ p {
 }
 
 .contact-form .form-control {
-  background-color: #f8fbe9;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 12px 15px;
@@ -485,12 +559,12 @@ p {
 }
 
 .contact-form .form-control:focus {
-  border-color: #a7c520;
+  border-color: #17242b;
   box-shadow: 0 0 5px rgba(167, 197, 32, 0.5);
 }
 
 .contact-form .btn {
-  background-color: #a7c520;
+  background-color: #17242b;
   color: #fff;
   padding: 15px 30px;
   font-size: 1.1rem;
@@ -533,9 +607,9 @@ p {
 }
 /* === Footer === */
 footer {
-  background-color: #a7c520; /* Fondo oscuro */
-  color: #a7c520; /* Texto blanco */
-  padding: 3px 0;
+  background-color: #e9f6d6; /* Fondo oscuro */
+  color: #202733; /* Texto blanco */
+  padding: 10px 0;
   font-size: 1rem;
   text-align: center;
   position: relative;
@@ -554,7 +628,7 @@ footer .social-icon {
 }
 
 footer .social-icon:hover {
-  color: #a7c520; /* Color cuando se pasa el ratón por encima */
+  color: #202733; /* Color cuando se pasa el ratón por encima */
 }
 
 footer .container {
