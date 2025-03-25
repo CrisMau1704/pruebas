@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital File - Soluciones de Digitalización</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="estilo2.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Incluir AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="imagenes/logo-cris.png" alt="Digital File" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beneficios"><i class="fas fa-concierge-bell"></i> Beneficios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services"><i class="fas fa-book"></i> Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contacto</a>
+                    </li>
+                    <!-- Agregar el botón de Iniciar sesión -->
+                    <li class="nav-item">
+                        <a class="btn btn-success" href="#login"
+                            style="color: #202733; background-color: #e9f6d6;">Iniciar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="imagenes/images111.png" class="d-block w-100" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/imageaa2.png" class="d-block w-100" alt="Imagen 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/image22.png" class="d-block w-100" alt="Imagen 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/ismage.png" class="d-block w-100" alt="Imagen 5">
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="overlay-text">
+            <h1 data-aos="fade-up">Transforma tu negocio con la digitalización</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Ahorra espacio, mejora el acceso y asegura la integridad de tus
+                documentos con nuestras soluciones de digitalización.</p>
+            <a href="#services" class="btn btn-primary mt-4" data-aos="fade-up" data-aos-delay="400">Ver Servicios</a>
+            <button class="btn btn-success mt-4" data-aos="fade-up" data-aos-delay="600"
+                onclick="window.open('https://wa.me/60108969?text=Hola,%20necesito%20información%20sobre%20sus%20servicios', '_blank')">
+                Contáctanos por WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!-- Beneficios clave de la digitalización -->
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up">Beneficios clave de la digitalización</h2>
+                <p data-aos="fade-up" data-aos-delay="200" class="lead">
+                    Descubre cómo nuestros servicios pueden mejorar la eficiencia y el crecimiento de tu empresa.
+                </p>
+            </div>
+            <div class="row">
+                <!-- Beneficio 1: Accesibilidad -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="beneficio-box text-center p-4">
+                        <i class="fas fa-globe icono-beneficio"></i>
+                        <h3>Accesibilidad</h3>
+                        <p>Accede a tus documentos desde cualquier lugar y en cualquier momento.</p>
+                    </div>
+                </div>
+                <!-- Beneficio 2: Organización -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="beneficio-box text-center p-4">
+                        <i class="fas fa-folder-open icono-beneficio"></i>
+                        <h3>Organización</h3>
+                        <p>Mantén tus documentos ordenados y fáciles de encontrar.</p>
+                    </div>
+                </div>
+                <!-- Beneficio 3: Seguridad -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="beneficio-box text-center p-4">
+                        <i class="fas fa-shield-alt icono-beneficio"></i>
+                        <h3>Seguridad</h3>
+                        <p>Protege tus documentos con nuestros sistemas de seguridad avanzados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="mountain-divider"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up">Nuestros Servicios</h2>
+                <h4 data-aos="fade-up" data-aos-delay="200">Ofrecemos una amplia gama de servicios profesionales</h4>
+            </div>
+
+            <div class="row">
+                <!-- Primer servicio: Imagen a la izquierda, texto a la derecha -->
+                <div class="col-12 mb-4" data-aos="fade-left" data-aos-delay="100">
+                    <div class="service-box d-flex align-items-center">
+                        <img src="imagenes/escaneo.PNG" alt="Digitalización de Documentos"
+                            class="img-fluid mb-3 rounded" />
+                        <div class="service-text ml-4">
+                            <h3 class="service-title">Digitalización de Documentos</h3>
+                            <p>
+                                Convierte tus documentos físicos en archivos digitales de alta calidad.
+                                Optimiza el almacenamiento y la búsqueda de información, reduce el espacio físico en tus
+                                oficinas y
+                                mejora la accesibilidad de tus documentos desde cualquier dispositivo. Además, nuestra
+                                digitalización
+                                asegura una alta precisión y calidad en el proceso, lo que te permitirá obtener
+                                documentos listos para
+                                ser compartidos y procesados de manera más eficiente.
+                            </p>
+
+                            <a href="#consultoria" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segundo servicio: Imagen a la derecha, texto a la izquierda -->
+                <div class="col-12 mb-4" data-aos="fade-right" data-aos-delay="200">
+                    <div class="service-box d-flex flex-column flex-md-row align-items-center">
+                        <img src="imagenes/escaner3.PNG" alt="Digitalización en Sitio" class="img-fluid mb-3 rounded" />
+                        <div class="service-text mr-4">
+                            <h3 class="service-title">Digitalización en Sitio</h3>
+                            <p>
+                                Servicio de digitalización en tu empresa u oficina para mayor comodidad y rapidez.
+                                Nuestro equipo se encarga de realizar todo el proceso de digitalización directamente en
+                                tu lugar de
+                                trabajo, sin necesidad de que envíes tus documentos a otro sitio. Esto te permite
+                                ahorrar tiempo,
+                                minimizar riesgos de pérdida de información y asegurar una mayor confidencialidad.
+                                Además, contamos con
+                                equipos avanzados que garantizan una digitalización rápida, precisa y segura,
+                                optimizando tus recursos y
+                                mejorando la productividad de tu empresa.
+                            </p>
+
+                            <a href="#soporte" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tercer servicio: Imagen a la izquierda, texto a la derecha -->
+                <div class="col-12 mb-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="service-box d-flex align-items-center">
+                        <img src="imagenes/escaner4.PNG" alt="Digitalización con OCR" class="img-fluid mb-3 rounded" />
+                        <div class="service-text ml-4">
+                            <h3 class="service-title">Digitalización con Reconocimiento OCR</h3>
+                            <p>
+                                Reconocimiento óptico de caracteres (OCR) para una búsqueda más precisa del documento.
+                                Con nuestra tecnología avanzada de OCR, no solo convertimos tus documentos escaneados en
+                                archivos
+                                digitales, sino que también extraemos y procesamos el texto contenido en ellos. Esto te
+                                permite realizar
+                                búsquedas rápidas y precisas dentro de tus documentos, mejorando la accesibilidad de la
+                                información.
+                                Además, el OCR facilita la edición y reutilización de los datos extraídos, eliminando la
+                                necesidad de
+                                reingresar la información manualmente. Es la solución perfecta para transformar tus
+                                documentos en
+                                activos digitales completamente funcionales.
+                            </p>
+
+                            <a href="#desarrollo" class="btn btn-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Proceso de Digitalización Section -->
+    <section id="digitalization-process" style="padding: 80px 0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="color: #012e36;">Comienza tu transformación digital hoy</h2>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    Únete a las empresas que ya están optimizando sus procesos con nuestros servicios de digitalización.
+                </p>
+            </div>
+
+            <!-- Beneficios clave -->
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-sm-6 mb-3" data-aos="fade-up" data-aos-delay="250">
+                    <div class="benefit-box text-center p-4 rounded shadow-sm h-100">
+                        <!-- Reemplazamos el ícono por una imagen -->
+                        <img src="imagenes/procesos.PNG" alt="Procesos más eficientes" class="mb-3"
+                            style="width: 250px; height: 250px;">
+                        <h5 style="color: #012e36;">Procesos más eficientes</h5>
+                        <p>Optimiza el flujo de trabajo y reduce tiempos de espera con procesos digitalizados y
+                            automatizados.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-box text-center p-4 rounded shadow-sm h-100">
+                        <!-- Reemplazamos el ícono por una imagen -->
+                        <img src="imagenes/SEGURIDAD.PNG" alt="Ahorro de costos" class="mb-3"
+                            style="width: 250px; height: 250px;">
+                        <h5 style="color: #012e36;">Ahorro de costos</h5>
+                        <p>Eliminación de papel y reducción de los costos operativos relacionados con la gestión
+                            documental.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3" data-aos="fade-up" data-aos-delay="350">
+                    <div class="benefit-box text-center p-4 rounded shadow-sm h-100">
+                        <!-- Reemplazamos el ícono por una imagen -->
+                        <img src="imagenes/SEGURIDAD 2.PNG" alt="Seguridad mejorada" class="mb-3"
+                            style="width: 250px; height: 250px;">
+                        <h5 style="color: #012e36;">Seguridad mejorada</h5>
+                        <p>Protege tus documentos con protocolos de seguridad avanzados para evitar pérdidas y accesos
+                            no autorizados.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-box text-center p-4 rounded shadow-sm h-100">
+                        <!-- Reemplazamos el ícono por una imagen -->
+                        <img src="imagenes/VISOR.PNG" alt="Acceso rápido a la información" class="mb-3"
+                            style="width: 250px; height: 250px;">
+                        <h5 style="color: #012e36;">Acceso rápido a la información</h5>
+                        <p>Busca, encuentra y comparte tus documentos de manera instantánea, mejorando la agilidad en tu
+                            empresa.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Historia Section 
+  <section id="history" class="history" style="background-color: #215080; padding: 80px 0;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 data-aos="fade-up">Nuestra Historia</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Conoce cómo comenzamos y nuestra trayectoria en el sector.</p>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right">
+          <img src="imagenes/imagen4.jpg" alt="Historia de la Empresa" class="img-fluid rounded" />
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <p>Fundada en 2020, nuestra empresa ha crecido a pasos agigantados gracias a la dedicación de nuestro equipo y la confianza de nuestros clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact" style="padding: 80px 0;">
+        <div class="container">
+            <!-- Título y subtítulo -->
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up" style="color: #e9f6d6; ">Contáctanos y comienza tu transformación digital</h2>
+                <p data-aos="fade-up" data-aos-delay="200" style="color: #e9f6d6; font-size: 1.1rem;">¿Interesado en
+                    nuestros servicios? ¡Contáctanos!</p>
+            </div>
+
+            <!-- Formulario de contacto y horarios -->
+            <div class="row">
+                <!-- Formulario -->
+                <div class="col-md-6">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="Correo Electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" class="form-control" placeholder="Mensaje"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                <!-- Horarios -->
+                <div class="col-md-6">
+                    <div class="p-4 rounded" style="background-color: #f8f9fa; border: 1px solid #ddd;">
+                        <h4 style="color: #012e36;">Horarios de Atención</h4>
+                        <ul class="list-unstyled mt-3" style="color: #333; font-size: 1.1rem;">
+                            <li><strong>Lunes a Viernes:</strong> 08:00 AM - 06:00 PM</li>
+                            <li><strong>Sábado:</strong> 08:00 AM - 12:00 PM</li>
+                            <li><strong>Domingo:</strong> Cerrado</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="text-center mt-5">
+                <p>Síguenos en nuestras redes sociales:</p>
+                <div>
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 <strong>Digital File</strong>. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+            });
+        });
+
+        // Obtener la navbar
+        const navbar = document.querySelector('.navbar');
+
+        // Detectar cuando se hace scroll
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {  // Si el scroll es mayor a 50px
+                navbar.classList.add('scrolled');  // Añadir la clase "scrolled"
+            } else {
+                navbar.classList.remove('scrolled');  // Eliminar la clase "scrolled" si el scroll es menor
+            }
+        });
+
+
+        // Validación del formulario
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Mensaje enviado con éxito');
+                // Aquí puedes añadir la lógica para enviar el formulario a un servidor
+            } else {
+                alert('Por favor, completa todos los campos');
+            }
+        });
+    </script>
+</body>
+
+</html>
