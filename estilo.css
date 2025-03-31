@@ -1,641 +1,666 @@
 /* === Global Styles === */
+:root {
+  --primary: #00eaff;
+  --secondary: #17242b;
+  --accent: #ff7f50;
+  --dark-bg: #0d1b2a;
+  --darker-bg: #020c1b;
+  --light-text: #e0fbfc;
+  --dark-text: #1b263b;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #4c4c4c;
+  color: var(--dark-text);
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  background-color: #f8f9fa;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  color: #00eaff;
+  color: var(--primary);
   font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
 }
 
 p {
   font-size: 1.1rem;
   line-height: 1.8;
+  color: var(--light-text);
 }
 
-/* === Navbar === */
+/* === Modern Navbar === */
 .navbar {
-  background: linear-gradient(135deg, #0d1b2a, #1b263b);
-  padding: 12px 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  backdrop-filter: blur(0px); /* No blur inicialmente */
+  background: rgba(13, 27, 42, 0.9);
+  padding: 15px 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Cuando el usuario hace scroll */
 .navbar.scrolled {
-  background-color: rgba(32, 39, 51, 0.8); /* Fondo semi-transparente */
-  backdrop-filter: blur(5px); /* Aplicar un desenfoque al fondo */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer scroll */
+  background: rgba(2, 12, 27, 0.95);
+  padding: 10px 0;
+  box-shadow: 0 8px 32px rgba(0, 234, 255, 0.1);
 }
 
-.navbar-nav {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-nav .nav-item {
-  margin-left: 10px; /* Espaciado entre los elementos de la lista */
-}
-
-/* Estilo de los enlaces como botones */
 .nav-link {
-  color: #e0fbfc !important;
+  color: var(--light-text) !important;
   font-weight: 600;
-  padding: 10px 20px;
-  background-color: #1b263b;
-  border-radius: 25px;
-  text-align: center;
-  text-decoration: none;
+  padding: 10px 20px !important;
+  margin: 0 5px;
+  border-radius: 30px;
   transition: all 0.3s ease;
-  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;  /* Cambiado de top: 0 a bottom: 0 */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
 }
 
 .nav-link:hover {
-  color: #17242b !important;
-  background-color: #e0fbfc;
-  transform: scale(1.1);
-  cursor: pointer;
+  color: var(--primary) !important;
+  transform: translateY(-2px);
 }
 
-/* Estilo del enlace de Iniciar sesión */
 .btn-login {
-  color: #000;
-  background-color: #e0fbfc;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-weight: 600;
+  background: var(--primary);
+  color: var(--dark-bg) !important;
+  border-radius: 30px;
+  font-weight: 700;
+  padding: 10px 25px !important;
   transition: all 0.3s ease;
-  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.4);
 }
 
 .btn-login:hover {
-  background-color: #ff7f50;
-  transform: scale(1.1);
-  cursor: pointer;
+  background: var(--accent);
+  color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 127, 80, 0.5);
 }
 
-.navbar-brand {
-  color: #00eaff !important;
-  font-weight: 700;
-  font-size: 24px;
-  text-decoration: none;
-}
-
-.navbar-brand:hover {
-  color: #ff7f50 !important;
-}
-
-/* Espaciado para simular contenido */
-.content {
-  height: 200vh; /* Para poder hacer scroll */
-  padding-top: 80px; /* Para que el navbar no cubra el contenido */
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-/* === Hero Section === */
+/* === Hero Section - Futuristic Design === */
+/* === Hero Section with Text Over Images === */
 .hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
-}
-
-.carousel-inner img {
-  height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.5);
-}
-
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  z-index: 10;
-  max-width: 90%;
-}
-
-.overlay-text h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
-  margin: 0;
-}
-
-.overlay-text p {
-  font-size: 1.3rem;
-  margin-top: 20px;
-}
-
-.overlay-text .btn {
-  background-color: #00eaff;
-  color: #000;
-  padding: 14px 36px;
-  border-radius: 50px;
-  margin: 20px 10px;
-  transition: 0.3s;
-  font-weight: 600;
-  border: none;
-}
-
-.overlay-text .btn:hover {
-  background-color: #ff7f50;
-  transform: scale(1.05);
-}
-
-/* === Responsividad para pantallas pequeñas === */
-@media (max-width: 767px) {
-  /* Reducir tamaño de fuente para pantallas pequeñas */
-  .overlay-text h1 {
-    font-size: 2.5rem; /* Reducir el tamaño del título */
-    line-height: 1.2;  /* Ajustar el espaciado de las líneas */
-  }
-
-  .overlay-text p {
-    font-size: 1rem; /* Reducir el tamaño del párrafo */
-    line-height: 1.4;
-    margin-top: 15px;
-  }
-
-  .overlay-text .btn {
-    padding: 12px 30px; /* Reducir el tamaño del botón */
-    font-size: 1.1rem; /* Ajustar el tamaño de la fuente del botón */
-  }
-
-  /* Asegurarse de que el texto no se desborde */
-  .overlay-text {
-    max-width: 80%;
-  }
-}
-
-/* === Asegurar que el Hero Section se vea bien en pantallas más grandes === */
-@media (min-width: 1200px) {
-  .overlay-text h1 {
-    font-size: 5rem; /* Ajustar el tamaño para pantallas grandes */
-  }
-
-  .overlay-text p {
-    font-size: 1.5rem;
-  }
-}
-
-
-
-/* === Beneficios Section - Diseño Tecnológico === */
-.beneficios {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-  position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* Efecto de líneas de neón en el fondo */
-.beneficios::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(rgba(255, 255, 255, 0.2), transparent 50%);
-  transform: rotate(25deg);
-  opacity: 0.1;
-}
-
-.beneficios h2 {
-  color: #00eaff;
-  font-size: 2.5rem;
-  font-family: 'Orbitron', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.beneficios p.lead {
-  color: #ffffff;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Estilos de las cajas de beneficios */
-.beneficio-box {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  padding: 40px 25px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-
-.beneficio-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.6);
-}
-
-/* Efecto de neón en los títulos */
-.beneficio-box h3 {
-  font-size: 1.6rem;
-  color: #00eaff;
-  margin-top: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
-}
-
-/* Estilos del párrafo */
-.beneficio-box p {
-  font-size: 1rem;
-  color: #ffffff;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-/* Efecto de neón en los íconos */
-.icono-beneficio {
-  font-size: 3rem;
-  color: #00eaff;
-  margin-bottom: 15px;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
-}
-
-/* Animación de brillo al pasar el mouse */
-.beneficio-box:hover .icono-beneficio {
-  color: #ff0077;
-  transform: scale(1.2);
-  text-shadow: 0 0 20px rgba(255, 0, 119, 0.9);
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-  .beneficios {
-      padding: 60px 0;
-  }
-
-  .beneficio-box {
-      margin-bottom: 30px;
-      padding: 25px 20px;
-  }
-
-  .beneficios h2 {
-      font-size: 2rem;
-  }
-
-  .beneficios p.lead {
-      font-size: 1rem;
-  }
-}
-
-/* Servicios */
-/* === Servicios Section - Diseño Neón === */
-#services {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-  position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: justify;
-}
-
-/* Efecto de líneas de neón en el fondo */
-#services::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(rgba(255, 255, 255, 0.2), transparent 50%);
-  transform: rotate(25deg);
-  opacity: 0.1;
-}
-
-.service-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  text-align: center;
+}
+
+/* Contenedor del carrusel que ocupará todo el espacio */
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Imágenes del carrusel */
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item {
+  height: 100%;
+}
+
+.hero-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Efecto de superposición oscura para mejorar legibilidad del texto */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 12, 27, 0.5);
+  z-index: 1;
+}
+
+/* Contenido del hero (texto y botones) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
   margin-bottom: 20px;
-  transition: transform 0.3s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px rgba(0, 234, 255, 0.5), 0 2px 10px rgba(0, 0, 0, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(0, 234, 255, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5); }
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: rgba(224, 251, 252, 0.9);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-/* Efecto Neón en el hover */
-.service-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.6);
-}
-
-.service-box img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-right: 30px; /* Aumenta el espacio entre la imagen y el texto */
-}
-
-.service-text {
-  flex: 1;
-}
-
-/* Título de servicio con efecto neón */
-.service-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #00eaff;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(0, 234, 255, 0.8), 0 0 20px rgba(0, 234, 255, 0.6); /* Efecto neón */
-}
-
-.service-text p {
-  font-size: 1rem;
-  color: #ffffff;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.service-text .btn {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007bff;
-  color: white;
+  z-index: 1;
   border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
-/* Botón con efecto al pasar el mouse */
-.service-text .btn:hover {
-  background-color: #0056b3;
+.hero-btn:first-child {
+  background: var(--primary);
+  color: var(--dark-bg);
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.4);
 }
 
-/* Efecto de neón en los íconos */
-.icono-servicio {
-  font-size: 3rem;
-  color: #00eaff;
-  margin-bottom: 15px;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-  text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
+.hero-btn:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 234, 255, 0.6);
 }
 
-/* Animación de brillo al pasar el mouse */
-.service-box:hover .icono-servicio {
-  color: #ff0077;
-  transform: scale(1.2);
-  text-shadow: 0 0 20px rgba(255, 0, 119, 0.9);
+.hero-btn-whatsapp {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.hero-btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Efecto de partículas flotantes sobre las imágenes */
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(255, 127, 80, 0.1) 0%, transparent 20%);
+  animation: float 6s ease-in-out infinite alternate;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -10px); }
+  100% { transform: translate(10px, 10px); }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .service-box {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 15px;
   }
-
-  .service-box img {
-    margin-right: 0;
-    margin-bottom: 20px;
+  
+  .hero-btn {
+    width: 100%;
   }
 }
 
-
-
-/* === Digitalization Process Section === */
-#digitalization-process {
-  padding: 80px 0;
-  color: #ffffff;
-  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-  text-align: center;
+/* === Modern Benefits Section === */
+.beneficios {
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--dark-bg), #1b263b);
+  position: relative;
+  overflow: hidden;
 }
 
-.benefit-box {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  padding: 25px;
+.beneficios::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.beneficio-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 40px 25px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 350px;
+  border: 1px solid rgba(0, 234, 255, 0.1);
+  height: 100%;
 }
 
-.benefit-box:hover {
-  transform: translateY(-10px) scale(1.05);
-  background: rgba(255, 255, 255, 0.2);
+.beneficio-box:hover {
+  transform: translateY(-10px);
+  background: rgba(0, 234, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.2);
+  border-color: rgba(0, 234, 255, 0.3);
 }
 
-.benefit-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
+.icono-beneficio {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.beneficio-box:hover .icono-beneficio {
+  transform: scale(1.2);
+  color: var(--accent);
+}
+
+.beneficio-box h3 {
+  font-size: 1.5rem;
   margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
 }
 
-.benefit-box h5 {
-  color: #ff856f;
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-top: 10px;
+.beneficio-box h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
 }
 
-.benefit-box p {
-  color: #f4f4f4;
-  font-size: 1rem;
-  flex-grow: 1;
+.beneficio-box:hover h3::after {
+  width: 100%;
 }
 
-.benefit-box .btn {
-  background-color: #ff856f;
-  color: white;
-  padding: 12px 28px;
-  font-size: 1rem;
-  border-radius: 30px;
-  margin-top: 15px;
-  transition: 0.3s;
-  border: none;
+/* === Services Section - Interactive Cards === */
+.services {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1b263b, var(--dark-bg));
 }
 
-.benefit-box .btn:hover {
-  background-color: #ff6347;
+.service-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 234, 255, 0.1);
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 234, 255, 0.2);
+}
+
+.service-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-box:hover img {
   transform: scale(1.05);
 }
 
-/* Responsive Styles */
-@media (max-width: 991px) {
-  .benefit-box {
-      padding: 20px;
-      min-height: 320px;
-  }
+.service-text {
+  padding: 25px;
 }
 
-@media (max-width: 767px) {
-  .benefit-box {
-      margin-bottom: 20px;
-      padding: 15px;
-  }
-}
-
-
-/* === Contact Section === */
-.contact {
-  background: linear-gradient(135deg, #415a77, #1b263b, #415a77);
-  padding: 80px 0;
-  color: #000; /* Cambié el color de texto a un tono más oscuro para mejor legibilidad */
+.service-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--primary);
   position: relative;
 }
 
-.contact h2 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #333; /* Color oscuro para el título */
-  margin-bottom: 20px;
+.service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary);
 }
 
-.contact p {
-  font-size: 1.2rem;
-  color: #17242b;
-  font-weight: 500;
+.service-text .btn {
+  background: var(--primary);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.service-text .btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
+}
+
+/* === Digitalization Process Section === */
+#digitalization-process {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--dark-bg), #1b263b);
+  position: relative;
+  overflow: hidden;
+}
+
+#digitalization-process::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.05) 0%, transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(255, 127, 80, 0.05) 0%, transparent 25%);
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-15px, -15px); }
+  100% { transform: translate(15px, 15px); }
+}
+
+.process-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.process-item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+}
+
+.process-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.process-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.process-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.process-image {
+  flex: 1;
+  position: relative;
+  min-height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.process-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.process-item:hover .process-image {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 234, 255, 0.3);
+}
+
+.process-item:hover .process-image img {
+  transform: scale(1.1);
+}
+
+.process-content h3 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.process-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.process-item:hover .process-content h3::after {
+  width: 400px;
+}
+
+.process-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: rgba(224, 251, 252, 0.9);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .process-item {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+  
+  .process-image {
+    min-height: 250px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #digitalization-process {
+    padding: 80px 0;
+  }
+  
+  .process-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .process-step {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+/* === Modern Contact Section === */
+.contact {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1b263b, var(--dark-bg));
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 234, 255, 0.1) 0%, transparent 30%);
 }
 
 .contact-form {
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
   padding: 40px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 234, 255, 0.1);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 234, 255, 0.2);
+  color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form .form-group {
-  margin-bottom: 20px;
-}
-
-.contact-form .form-control {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 12px 15px;
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.contact-form .form-control:focus {
-  border-color: #17242b;
-  box-shadow: 0 0 5px rgba(167, 197, 32, 0.5);
-}
-
-.contact-form .btn {
-  background-color: #17242b;
-  color: #fff;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 30px;
+  padding: 12px 20px;
   transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem rgba(0, 234, 255, 0.25);
+  color: white;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--dark-bg);
   border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.contact-form .btn:hover {
-  background-color: #ff856f;
-  transform: translateY(-5px);
+.btn-primary:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 127, 80, 0.4);
 }
 
-.contact-form .btn:active {
-  transform: translateY(0);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .contact h2 {
-    font-size: 2.5rem;
-  }
-
-  .contact p {
-    font-size: 1rem;
-  }
-
-  .contact-form {
-    padding: 25px;
-  }
-
-  .contact-form .form-control {
-    font-size: 0.9rem;
-  }
-
-  .contact-form .btn {
-    font-size: 1rem;
-  }
-}
-/* === Footer === */
+/* === Futuristic Footer === */
 footer {
-  background-color: #e0fbfc; /* Fondo oscuro */
-  color: #000; /* Texto blanco */
-  padding: 10px 0;
-  font-size: 1rem;
-  text-align: center;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  padding: 30px 0;
   position: relative;
 }
 
-footer p {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
-footer .social-icon {
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 1.2rem;
+.social-icon {
+  color: var(--light-text);
+  font-size: 1.3rem;
+  margin: 0 15px;
   transition: all 0.3s ease;
 }
 
-footer .social-icon:hover {
-  color: #000; /* Color cuando se pasa el ratón por encima */
+.social-icon:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
 }
 
-footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .service-box {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
-  footer {
-    padding: 30px 15px;
+  .hero-content h1 {
+    font-size: 2.2rem;
   }
-
-  footer p {
-    font-size: 1rem;
+  
+  .hero-content p {
+    font-size: 1.1rem;
   }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero-btn {
+    width: 100%;
+  }
+}
 
-  footer .social-icon {
-    font-size: 1rem;
-    margin: 0 8px;
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .beneficio-box, .service-box, .benefit-box {
+    padding: 20px;
   }
 }

@@ -53,7 +53,7 @@
                     <!-- Agregar el botón de Iniciar sesión -->
                     <li class="nav-item">
                         <a class="btn btn-success" href="#login"
-                            style="color: #202733; background-color: #e9f6d6;">Iniciar Sesión</a>
+                            style="color: #202733; background-color: #00eaff">Iniciar Sesión</a>
                     </li>
                 </ul>
             </div>
@@ -63,43 +63,47 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carrusel de imágenes -->
+        <div id="carouselExampleIndicators" class="carousel slide hero-carousel" data-bs-ride="carousel">
             <div class="carousel-inner">
-
                 <div class="carousel-item active">
-                    <img src="imagenes/images111.png" class="d-block w-100" alt="Imagen 2">
+                    <img src="imagenes/images111.png" class="d-block w-100" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="imagenes/imageaa2.png" class="d-block w-100" alt="Imagen 3">
+                    <img src="imagenes/imageaa2.png" class="d-block w-100" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="imagenes/image22.png" class="d-block w-100" alt="Imagen 4">
+                    <img src="imagenes/image22.png" class="d-block w-100" alt="Imagen 3">
                 </div>
                 <div class="carousel-item">
-                    <img src="imagenes/ismage.png" class="d-block w-100" alt="Imagen 5">
+                    <img src="imagenes/ismage.png" class="d-block w-100" alt="Imagen 4">
                 </div>
-
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
+            <!-- Controles del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
         </div>
-        <div class="overlay-text">
+    
+        <!-- Contenido central de la sección -->
+        <div class="hero-content">
             <h1 data-aos="fade-up">Transforma tu negocio con la digitalización</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Ahorra espacio, mejora el acceso y asegura la integridad de tus
-                documentos con nuestras soluciones de digitalización.</p>
-            <a href="#services" class="btn btn-primary mt-4" data-aos="fade-up" data-aos-delay="400">Ver Servicios</a>
-            <button class="btn btn-success mt-4" data-aos="fade-up" data-aos-delay="600"
-                onclick="window.open('https://wa.me/60108969?text=Hola,%20necesito%20información%20sobre%20sus%20servicios', '_blank')">
-                Contáctanos por WhatsApp
-            </button>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Ahorra espacio, mejora el acceso y asegura la integridad de tus documentos con nuestras soluciones de digitalización.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="hero-btn" data-aos="fade-up" data-aos-delay="400">Ver Servicios</a>
+                <button class="hero-btn hero-btn-whatsapp" data-aos="fade-up" data-aos-delay="600"
+                    onclick="window.open('https://wa.me/60108969?text=Hola,%20necesito%20información%20sobre%20sus%20servicios', '_blank')">
+                    Contáctanos por WhatsApp
+                </button>
+            </div>
         </div>
     </section>
+    
 
     <!-- Beneficios clave de la digitalización -->
     <section id="beneficios" class="beneficios">
@@ -238,34 +242,53 @@
                 </p>
             </div>
     
-            <!-- Beneficios clave -->
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="250">
-                    <div class="benefit-box">
-                        <img src="imagenes/procesos.PNG" alt="Procesos más eficientes" class="benefit-img">
-                        <h5>Procesos más eficientes</h5>
-                        <p>Optimiza el flujo de trabajo y reduce tiempos de espera con procesos digitalizados y automatizados.</p>
+            <!-- Proceso de digitalización en diseño alternado -->
+            <div class="process-container">
+                <!-- Paso 1 - Imagen a la izquierda / Texto a la derecha -->
+                <div class="process-item" data-aos="fade-up">
+                    <div class="process-image">
+                        <img src="imagenes/procesos.PNG" alt="Procesos más eficientes">
+                        <div class="process-step">1</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Procesos más eficientes</h3>
+                        <p>Optimiza el flujo de trabajo y reduce tiempos de espera con procesos digitalizados y automatizados. Nuestra tecnología garantiza una transición sin problemas desde sistemas tradicionales a digitales.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="benefit-box">
-                        <img src="imagenes/SEGURIDAD.PNG" alt="Ahorro de costos" class="benefit-img">
-                        <h5>Ahorro de costos</h5>
-                        <p>Eliminación de papel y reducción de los costos operativos relacionados con la gestión documental.</p>
+    
+                <!-- Paso 2 - Texto a la izquierda / Imagen a la derecha -->
+                <div class="process-item" data-aos="fade-up">
+                    <div class="process-image">
+                        <img src="imagenes/SEGURIDAD.PNG" alt="Ahorro de costos">
+                        <div class="process-step">2</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Ahorro de costos</h3>
+                        <p>Eliminación de papel y reducción de los costos operativos relacionados con la gestión documental. Reduce hasta un 60% tus gastos en almacenamiento físico y gestión de documentos.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="350">
-                    <div class="benefit-box">
-                        <img src="imagenes/SEGURIDAD 2.PNG" alt="Seguridad mejorada" class="benefit-img">
-                        <h5>Seguridad mejorada</h5>
-                        <p>Protege tus documentos con protocolos de seguridad avanzados para evitar pérdidas y accesos no autorizados.</p>
+    
+                <!-- Paso 3 - Imagen a la izquierda / Texto a la derecha -->
+                <div class="process-item" data-aos="fade-up">
+                    <div class="process-image">
+                        <img src="imagenes/SEGURIDAD 2.PNG" alt="Seguridad mejorada">
+                        <div class="process-step">3</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Seguridad mejorada</h3>
+                        <p>Protege tus documentos con protocolos de seguridad avanzados para evitar pérdidas y accesos no autorizados. Implementamos cifrado AES-256 y controles de acceso biométricos.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benefit-box">
-                        <img src="imagenes/VISOR.PNG" alt="Acceso rápido a la información" class="benefit-img">
-                        <h5>Acceso rápido a la información</h5>
-                        <p>Busca, encuentra y comparte tus documentos de manera instantánea, mejorando la agilidad en tu empresa.</p>
+    
+                <!-- Paso 4 - Texto a la izquierda / Imagen a la derecha -->
+                <div class="process-item" data-aos="fade-up">
+                    <div class="process-image">
+                        <img src="imagenes/VISOR.PNG" alt="Acceso rápido a la información">
+                        <div class="process-step">4</div>
+                    </div>
+                    <div class="process-content">
+                        <h3>Acceso rápido a la información</h3>
+                        <p>Busca, encuentra y comparte tus documentos de manera instantánea, mejorando la agilidad en tu empresa. Nuestro sistema de indexación permite encontrar cualquier documento en menos de 3 segundos.</p>
                     </div>
                 </div>
             </div>
