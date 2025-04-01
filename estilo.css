@@ -456,84 +456,15 @@ p {
 }
 
 /* === Services Section - Interactive Cards === */
+/* === Sección de Servicios Premium === */
 .services {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #1b263b, var(--dark-bg));
-}
-
-.service-box {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 234, 255, 0.1);
-}
-
-.service-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 234, 255, 0.2);
-}
-
-.service-box img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.service-box:hover img {
-  transform: scale(1.05);
-}
-
-.service-text {
-  padding: 25px;
-}
-
-.service-title {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: var(--primary);
-  position: relative;
-}
-
-.service-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: var(--primary);
-}
-
-.service-text .btn {
-  background: var(--primary);
-  color: var(--dark-bg);
-  border: none;
-  border-radius: 30px;
-  padding: 10px 25px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.service-text .btn:hover {
-  background: var(--accent);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
-}
-
-/* === Digitalization Process Section === */
-#digitalization-process {
   padding: 120px 0;
-  background: linear-gradient(135deg, var(--dark-bg), #1b263b);
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
   position: relative;
   overflow: hidden;
 }
 
-#digitalization-process::before {
+.services::before {
   content: '';
   position: absolute;
   top: 0;
@@ -548,74 +479,108 @@ p {
 
 @keyframes float {
   0% { transform: translate(0, 0); }
-  50% { transform: translate(-15px, -15px); }
-  100% { transform: translate(15px, 15px); }
+  50% { transform: translate(-10px, -10px); }
+  100% { transform: translate(10px, 10px); }
 }
 
-.process-container {
+.services .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+}
+
+.section-header p {
+  color: rgba(224, 251, 252, 0.8);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Diseño de tarjetas de servicios mejorado */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 234, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 60px;
 }
 
-.process-item {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  position: relative;
+.service-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 234, 255, 0.25);
+  border-color: rgba(0, 234, 255, 0.3);
 }
 
-.process-item:nth-child(odd) {
-  flex-direction: row;
-}
-
-.process-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.process-content {
-  flex: 1;
-  padding: 30px;
-}
-
-.process-image {
-  flex: 1;
-  position: relative;
-  min-height: 200px;
-  border-radius: 15px;
+.service-image {
+  height: 250px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
 }
 
-.process-image img {
+.service-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  transition: transform 0.8s ease;
 }
 
-.process-item:hover .process-image {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0, 234, 255, 0.3);
-}
-
-.process-item:hover .process-image img {
+.service-card:hover .service-image img {
   transform: scale(1.1);
 }
 
-.process-content h3 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
+.service-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: var(--dark-bg);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.4);
 }
 
-.process-content h3::after {
+.service-content {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.service-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   left: 0;
   width: 60px;
   height: 3px;
@@ -623,29 +588,281 @@ p {
   transition: width 0.4s ease;
 }
 
-.process-item:hover .process-content h3::after {
-  width: 400px;
+.service-card:hover .service-title::after {
+  width: 100px;
 }
 
-.process-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+.service-description {
+  color: rgba(224, 251, 252, 0.8);
   margin-bottom: 25px;
-  color: rgba(224, 251, 252, 0.9);
+  line-height: 1.7;
+  flex-grow: 1;
 }
 
+.service-features {
+  margin-bottom: 25px;
+}
 
+.service-features li {
+  color: rgba(224, 251, 252, 0.8);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.service-btn {
+  background: linear-gradient(135deg, var(--primary), #00c3ff);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0, 234, 255, 0.3);
+  text-align: center;
+  margin-top: auto;
+  display: inline-block;
+  width: fit-content;
+}
+
+.service-btn:hover {
+  background: linear-gradient(135deg, var(--accent), #ff6347);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 127, 80, 0.5);
+}
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .process-item {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 80px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .service-image {
+    height: 200px;
+  }
+  
+  .service-content {
+    padding: 20px;
+  }
+  
+  .service-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* === Digitalization Process Section === */
+/* === Sección de Proceso Mejorada === */
+#digitalization-process {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  position: relative;
+  overflow: hidden;
+}
+
+#digitalization-process::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(0, 234, 255, 0.08) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 127, 80, 0.08) 0%, transparent 20%);
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, -10px); }
+}
+
+.process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.process-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+}
+
+.process-header p {
+  color: rgba(224, 251, 252, 0.8);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.process-step:nth-child(odd) {
+  flex-direction: row;
+}
+
+.process-step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.step-image {
+  flex: 0 0 45%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  aspect-ratio: 16/9;
+}
+
+.step-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.process-step:hover .step-image {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 234, 255, 0.25);
+}
+
+.process-step:hover .step-image img {
+  transform: scale(1.05);
+}
+
+.step-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background: var(--primary);
+  color: var(--dark-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 234, 255, 0.5);
+  z-index: 2;
+}
+
+.step-content h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.step-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.process-step:hover .step-content h3::after {
+  width: 100px;
+}
+
+.step-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(224, 251, 252, 0.9);
+  margin-bottom: 20px;
+}
+
+.step-features {
+  margin-top: 25px;
+}
+
+.step-features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: rgba(224, 251, 252, 0.8);
+}
+
+.step-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .process-step {
     flex-direction: column !important;
     gap: 30px;
   }
   
-  .process-image {
-    min-height: 250px;
+  .step-image {
+    flex: 0 0 auto;
     width: 100%;
+    max-width: 500px;
+  }
+  
+  .step-number {
+    top: -15px;
+    left: 15px;
   }
 }
 
@@ -654,11 +871,15 @@ p {
     padding: 80px 0;
   }
   
-  .process-content h3 {
-    font-size: 1.8rem;
+  .process-header h2 {
+    font-size: 2rem;
   }
   
-  .process-step {
+  .step-content h3 {
+    font-size: 1.6rem;
+  }
+  
+  .step-number {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
